@@ -1,0 +1,109 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:project_no",
+ "creation": "2023-11-15 04:45:20.900952",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project_no",
+  "client",
+  "pmc",
+  "consualtant",
+  "main_contractor",
+  "location",
+  "price"
+ ],
+ "fields": [
+  {
+   "fieldname": "project_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project No.",
+   "options": "Project",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Client",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pmc",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "PMC",
+   "reqd": 1
+  },
+  {
+   "fieldname": "consualtant",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Consualtant ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "main_contractor",
+   "fieldtype": "Data",
+   "label": "Main contractor ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location",
+   "options": "Location",
+   "reqd": 1
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "label": "Price ",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-11-15 04:45:42.538796",
+ "modified_by": "Administrator",
+ "module": "ASGC",
+ "name": "Preposal List",
+ "name_case": "Title Case",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

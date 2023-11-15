@@ -1,0 +1,126 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:project_no",
+ "creation": "2023-11-15 05:16:14.763820",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project_no",
+  "status",
+  "descreption",
+  "reason",
+  "project_specs",
+  "attatched_files"
+ ],
+ "fields": [
+  {
+   "fieldname": "project_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project No.",
+   "options": "Project",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "\nAwarded\nNot Awarded",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.status === \"Awarded\"",
+   "fieldname": "descreption",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Descreption",
+   "mandatory_depends_on": "eval:doc.status === \"Awarded\""
+  },
+  {
+   "depends_on": "eval:doc.status === \"Not Awarded\"",
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason",
+   "mandatory_depends_on": "eval:doc.status === \"Not Awarded\""
+  },
+  {
+   "depends_on": "eval:doc.project_no != null",
+   "fieldname": "attatched_files",
+   "fieldtype": "Table",
+   "label": "Attatched Files",
+   "options": "Inspection Media",
+   "reqd": 1
+  },
+  {
+   "fieldname": "project_specs",
+   "fieldtype": "Small Text",
+   "label": "Project Specs",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "group": "IFC",
+   "link_doctype": "Materials Submital",
+   "link_fieldname": "project_name"
+  },
+  {
+   "group": "SITE SURVEY",
+   "link_doctype": "LOI Letter",
+   "link_fieldname": "project_name"
+  }
+ ],
+ "make_attachments_public": 1,
+ "modified": "2023-11-15 08:08:10.659894",
+ "modified_by": "Administrator",
+ "module": "ASGC",
+ "name": "Tender List",
+ "name_case": "Title Case",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_preview_popup": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Green",
+   "title": "Awarded"
+  },
+  {
+   "color": "Red",
+   "title": "Not Awarded"
+  }
+ ]
+}
